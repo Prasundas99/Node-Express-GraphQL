@@ -1,5 +1,4 @@
-import graphql from "graphql";
-
+const graphql = require('graphql');
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -38,6 +37,11 @@ const RootQuery = new GraphQLObjectType({
     }
 });
 
+/*
 export default new GraphQLSchema({
+    query: RootQuery
+});
+*/
+module.exports = new GraphQLSchema({
     query: RootQuery
 });

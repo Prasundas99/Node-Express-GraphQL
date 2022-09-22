@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
 export const config = {
     port: PORT,
@@ -6,10 +6,6 @@ export const config = {
     graphqlendpoint: "/graphql",
     graphql: {
         ide: true,
-        tracing: true,
-        cacheControl: true,
-        playground: true,
-        introspection: true,
         pretty: true,
     }
 };
