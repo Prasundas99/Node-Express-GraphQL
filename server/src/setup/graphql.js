@@ -6,11 +6,11 @@ export default function GraphQlServer(server) {
   console.info('SETUP - Loading GraphQl Server...')
 
   server.use(
-    '/graphql',
+    config.graphqlendpoint,
     graphqlHTTP(() => ({
       schema,
       graphiql: true,
-      pretty: true,
+      //pretty: true,
     }))
   )
 
