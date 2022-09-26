@@ -11,13 +11,14 @@ const app = express();
 // Setup load modules
 loadStartModules(app)
 
+// Setup GraphQL
+setupGraphQL(app)
+
+
 // Server Listen
 app.listen(config.port, () => {
   console.log(config.serverRunningMsg);
 })
-
-// Setup GraphQL
-setupGraphQL(app)
 
 
 

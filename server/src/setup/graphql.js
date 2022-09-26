@@ -10,6 +10,7 @@ export default function GraphQlServer(server) {
     graphqlHTTP(() => ({
       schema,
       graphiql: true,
+      //graphiql: true,
       //pretty: true,
     }))
   )
