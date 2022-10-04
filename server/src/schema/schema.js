@@ -1,4 +1,4 @@
-import { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt } from 'graphql'
+import { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, GraphQLList } from 'graphql'
 import _ from 'lodash'
 
 // dummy data
@@ -37,7 +37,13 @@ const AuthorType = new GraphQLObjectType({
   fields: ( ) => ({
       id: { type: GraphQLID },
       age: { type: GraphQLInt },
-      name: { type: GraphQLString }
+      name: { type: GraphQLString },
+      books: {
+        type: new GraphQLList(BookType),
+        resolve(parent, args) {
+          return _.filter(books, { authorId: parent.id });
+        }
+      }
   })
 });
 
